@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import ListaChatItem from './components/ListaChatItem';
 
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
 
-const myVar = () => {
+export default () => {
+
+    const [listachat, setChatList] = useState([{},{},{},{}]);
   return (
       <div className="app-janela">
           <div className="barra-lateral">
@@ -32,13 +35,16 @@ const myVar = () => {
                   <div className="busca-input">
                     <SearchIcon fontSize="small" style={{color: '#919191'}}/>
                     <input type="search" placeholder="Procurar ou comecar nova conversa" />
-                    
                   </div>
               </div>
               
               
-              <div className="lista-chat">
-                  ...
+              <div className="listaChat">
+                  {ListaChatItem.map((item, key)=>(
+                      <ListaChatItem  
+                        key={key}
+                      />
+                  ))};
               </div>
           </div>
           <div className="conteudo-area">
@@ -47,4 +53,4 @@ const myVar = () => {
       </div>
   );
 }
-export default myVar;
+
