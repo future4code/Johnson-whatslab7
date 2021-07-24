@@ -1,0 +1,30 @@
+.chatIntro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-bottom: 8px solid #f37d1f;
+
+
+}
+.chatIntro img{
+    width: 150px;
+    height: auto;
+}
+
+.chatIntro h1 {
+    font-size: 32;
+    color: #5c6e7e;
+    font-weight: normal;
+    margin-top: 30px;
+}
+
+.chatIntro h2{    
+    font-size: 14px;
+    color: #39434d;
+    font-weight: normal;
+    margin-top: 20px;
+    line-height: 20px;
+    text-align: center;
+}
