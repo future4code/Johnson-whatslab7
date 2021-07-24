@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import EmojiPicker from 'emoji-picker-react'
 import './ChatWindow.css'
+import MessageItem from './Components/MessageItem';
 
 import SearchIcon from '@material-ui/icons/Search'
 import AttachFileIcon from '@material-ui/icons/AttachFile'
@@ -13,20 +14,16 @@ import MicIcon from '@material-ui/icons/Mic';
 
 export default () => {
 
-    let recognition = null; //funcionalidade de reconhecimento de fala
-    let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-    if(SpeechRecognition !== undefined) {
-        recognition = new SpeechRecognition()
-    }
+    const [list, setList] = useState([])
 
     const [text, setText] = useState('')
-    const [listening, setListening] = useState(false)
+    
 
 
     const handleEmojiClick = (e, emojiObject) => {
         setText(text + emojiObject.emoji)
     }
-    /* animação dos Emojis */
+    
     const [emojiOpen, setEmojiOpen] = useState(false)
 
 
@@ -37,6 +34,14 @@ export default () => {
     const handleCloseEmoji = () => {
         setEmojiOpen(false)
     }
+
+    //funcionalidade do microfone
+    let recognition = null; 
+    let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+    if(SpeechRecognition !== undefined) {
+        recognition = new SpeechRecognition()
+    }
+    const [listening, setListening] = useState(false)
 
     const handleMicClick = () => {
         if(recognition !== null) {
@@ -88,6 +93,13 @@ export default () => {
 
 
             <div className="chatWindow-body">
+                {list.map((item, key) =>(
+                    <MessageItem
+                    key={key}
+                    data={item}
+                    />
+                
+                ))}
 
 
             </div>
