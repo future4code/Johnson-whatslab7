@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import ChatWindow from './Components/ChatWindow';
 import ChatListItem from './Components/ChatListItem';
@@ -16,7 +16,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 export default () => {
   const [chatlist, setChatList] = useState([
-
+ 
     {
       chatId: 1,
       title: 'Mestre Kame',
@@ -32,15 +32,7 @@ export default () => {
       title: 'Picolo',
       image: 'http://pm1.narvii.com/6490/9410e324f560c606cf2919178a8d0183e17f3bd1_00.jpg', alt: "foto-Picolo"
     },
-    {
-      chatId: 4,
-      title: 'Goku',
-      image: 'https://pbs.twimg.com/profile_images/3122936626/bf92ef8c8ca73f3e75a78084fe6de0f9.jpeg', alt: "foto-Goku"
-    },
-
-
-
-  ]);
+ ]);
 
   const [activeChat, setActiveChat] = useState({});
   return (
@@ -50,7 +42,7 @@ export default () => {
 
         <header>
           <img className="header-avatar" src="https://p.kindpng.com/picc/s/78-785827_user-profile-avatar-login-account-male-user-icon.png" alt="foto-usuário" />
-
+          
           <div className="header-buttons">
 
             <div className="header-btn">

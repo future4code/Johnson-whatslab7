@@ -63,8 +63,6 @@ export default () => {
     const handleSendClick =() => {
         
     }
-
-
     return (
         <div className="chatWindow">
             <div className="chatWindow-header">
@@ -179,6 +177,52 @@ export default () => {
 
 
 
+
+                <div className="chatWindow--headerbuttons">
+                    
+                    <div className="chatWindow--btn">
+                        <SearchIcon styled={{color: "#919191"}} />
+                    </div>
+
+                    <div className="chatWindow--btn">
+                        <AttachFileIcon styled={{color: "#919191"}} />
+                    </div>
+
+                    <div className="chatWindow--btn">
+                        <MoreVertIcon styled={{color: "#919191"}} />
+                    </div>
+
+
+                </div>
+
+           </div>
+           <div className="chatWindow--body">
+               
+               </div> 
+
+           <div className="chatWindow--footer">
+ 
+               <div className="chatWindow--pre">
+                   <div className="chatWindow--btn">
+                   <InsertEmoticonIcon styled={{color: "#919191"}} />  
+                   </div> 
+
+               </div>
+
+               <div className="chatWindow--inputarea">
+
+
+               </div>
+
+               <div className="chatWindow--pos">
+                   <div className="chatWindow--btn">
+                   <CloseIcon styled={{color: "#919191"}} />  
+                   </div>
+
+               </div>
+
+
+           </div>
 
         </div>
     );
