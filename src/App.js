@@ -19,7 +19,7 @@ export default () => {
  
     {
       chatId: 1,
-      title: 'Mestre Kame',
+      title: 'Meste Kame',
       image: 'https://cdn.colab55.com/images/5501/studio/53170/art/101282/stickers.png', alt: "foto-mestre-Kame"
     },
     {
@@ -32,7 +32,12 @@ export default () => {
       title: 'Picolo',
       image: 'http://pm1.narvii.com/6490/9410e324f560c606cf2919178a8d0183e17f3bd1_00.jpg', alt: "foto-Picolo"
     },
- ]);
+    {
+      chatId: 4,
+      title: 'Goku',
+      image: 'https://pbs.twimg.com/profile_images/3122936626/bf92ef8c8ca73f3e75a78084fe6de0f9.jpeg', alt: "foto-Goku"
+    },
+    ]);
 
   const [activeChat, setActiveChat] = useState({});
   return (

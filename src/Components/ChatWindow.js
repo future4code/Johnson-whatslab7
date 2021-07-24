@@ -96,12 +96,11 @@ export default () => {
                     key={key}
                     data={item}
                     />
-                
+
                 ))}
 
 
             </div>
-
             <div className="chatWindow-emojiArea"
                 style={{ height: emojiOpen ? '200px' : '0px' }}>
                 <EmojiPicker
@@ -109,39 +108,22 @@ export default () => {
                     disableSearchBar
                     disableSkinTonePicker
                 />
-
-
             </div>
-
-
-
-
             <div className="chatWindow-footer">
-
                 <div
                     className="chatWindow-btn"
                     onClick={handleCloseEmoji}
                     style={{ width: emojiOpen ? 40 : 0 }}
-
                 >
-
                     <CloseIcon style={{ color: '#919191' }} />
-
                 </div>
-
                 <div className="chatWindow-pre">
-
-
                     <div
                         className="chatWindow-btn"
                         onClick={handleOpenEmoji}
                     >
-
                         <InsertEmoticonIcon style={{ color: emojiOpen ? '#009688' : '#919191' }} />
-
                     </div>
-
-
                 </div>
                 <div className="chatWindow-inputArea">
                     <input
@@ -150,80 +132,21 @@ export default () => {
                         placeholder="Digite a LabMenssenger!"
                         value={text}
                         onChange={e => setText(e.target.value)}
-
                     />
                 </div>
-
                 <div className="chatWindow-pos">
-
                     {text === '' &&
-
                         <div onClick={handleMicClick} className="chatWindow-btn">
-
                             <MicIcon style={{ color: listening ? '#126ece' : '#919191' }} />
-
                         </div>
                     }
                     {text !== '' &&
                         <div Onclick={handleSendClick} className="chatWindow-btn">
-
                             <SendIcon style={{ color: '#919191' }} />
-
                         </div>
                     }
-
                 </div>
             </div>
-
-
-
-
-                <div className="chatWindow--headerbuttons">
-                    
-                    <div className="chatWindow--btn">
-                        <SearchIcon styled={{color: "#919191"}} />
-                    </div>
-
-                    <div className="chatWindow--btn">
-                        <AttachFileIcon styled={{color: "#919191"}} />
-                    </div>
-
-                    <div className="chatWindow--btn">
-                        <MoreVertIcon styled={{color: "#919191"}} />
-                    </div>
-
-
-                </div>
-
-           </div>
-           <div className="chatWindow--body">
-               
-               </div> 
-
-           <div className="chatWindow--footer">
- 
-               <div className="chatWindow--pre">
-                   <div className="chatWindow--btn">
-                   <InsertEmoticonIcon styled={{color: "#919191"}} />  
-                   </div> 
-
-               </div>
-
-               <div className="chatWindow--inputarea">
-
-
-               </div>
-
-               <div className="chatWindow--pos">
-                   <div className="chatWindow--btn">
-                   <CloseIcon styled={{color: "#919191"}} />  
-                   </div>
-
-               </div>
-
-
-           </div>
-
         </div>
     );
 }
