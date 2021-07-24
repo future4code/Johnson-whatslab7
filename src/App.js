@@ -33,7 +33,7 @@ export default () => {
     },
     {
       chatId: 4,
-      title: 'Jaspion',
+      title: 'Majin Boo',
       image: 'https://p.kindpng.com/picc/s/78-785827_user-profile-avatar-login-account-male-user-icon.png", alt="foto-usuário'
     },
 
@@ -49,7 +49,7 @@ export default () => {
 
         <header>
           <img className="header-avatar" src="https://p.kindpng.com/picc/s/78-785827_user-profile-avatar-login-account-male-user-icon.png" alt="foto-usuário" />
-
+          
           <div className="header-buttons">
 
             <div className="header-btn">

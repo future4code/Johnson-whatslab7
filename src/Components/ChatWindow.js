@@ -4,6 +4,10 @@ import './ChatWindow.css'
 import SearchIcon from '@material-ui/icons/Search';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import CloseIcon from '@material-ui/icons/Close';
+import SendIcon from '@material-ui/icons/Send';
+import MicIcon from '@material-ui/icons/Mic';
   
 export default () =>{
     return (
@@ -36,7 +40,27 @@ export default () =>{
            <div className="chatWindow--body">
                
                </div> 
+
            <div className="chatWindow--footer">
+ 
+               <div className="chatWindow--pre">
+                   <div className="chatWindow--btn">
+                   <InsertEmoticonIcon styled={{color: "#919191"}} />  
+                   </div> 
+
+               </div>
+
+               <div className="chatWindow--inputarea">
+
+
+               </div>
+
+               <div className="chatWindow--pos">
+                   <div className="chatWindow--btn">
+                   <CloseIcon styled={{color: "#919191"}} />  
+                   </div>
+
+               </div>
 
 
            </div>
