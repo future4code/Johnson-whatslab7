@@ -56,7 +56,7 @@
     overflow-y: auto;
     background-color: #d5d5e5;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     
 }
 .chatWindow-footer{
