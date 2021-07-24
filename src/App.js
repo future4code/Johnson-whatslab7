@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import ChatWindow from './Components/ChatWindow';
 import ChatListItem from './Components/ChatListItem';
@@ -15,7 +15,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 export default () => {
   const [chatlist, setChatList] = useState([
-
+ 
     {
       chatId: 1,
       title: 'Fulano de Tal',
@@ -80,6 +80,7 @@ export default () => {
           {chatlist.map((item, key) => (
             <ChatListItem
               key={key}
+              data={item}
               active={activeChat.chatId === chatlist[key].chatId}
 
               onClick={() => setActiveChat(chatlist[key])}
