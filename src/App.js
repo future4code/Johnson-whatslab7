@@ -4,6 +4,7 @@ import ChatWindow from './Components/ChatWindow';
 import ChatListItem from './Components/ChatListItem';
 import ChatIntro from './Components/ChatIntro';
 
+
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -18,28 +19,20 @@ export default () => {
  
     {
       chatId: 1,
-      title: 'Fulano de Tal',
-      image: 'https://p.kindpng.com/picc/s/78-785827_user-profile-avatar-login-account-male-user-icon.png", alt="foto-usuário'
+      title: 'Mestre Kame',
+      image: 'https://cdn.colab55.com/images/5501/studio/53170/art/101282/stickers.png', alt: "foto-mestre-Kame"
     },
     {
       chatId: 2,
-      title: 'Beltrano',
-      image: 'https://p.kindpng.com/picc/s/78-785827_user-profile-avatar-login-account-male-user-icon.png", alt="foto-usuário'
+      title: 'Gohan',
+      image: 'http://pm1.narvii.com/6274/0d98e8638503d663162d2d6a5952a5e83dd8cce9_00.jpg', alt: "foto-Gohan"
     },
     {
       chatId: 3,
-      title: 'Jaspion',
-      image: 'https://p.kindpng.com/picc/s/78-785827_user-profile-avatar-login-account-male-user-icon.png", alt="foto-usuário'
+      title: 'Picolo',
+      image: 'http://pm1.narvii.com/6490/9410e324f560c606cf2919178a8d0183e17f3bd1_00.jpg', alt: "foto-Picolo"
     },
-    {
-      chatId: 4,
-      title: 'Majin Boo',
-      image: 'https://p.kindpng.com/picc/s/78-785827_user-profile-avatar-login-account-male-user-icon.png", alt="foto-usuário'
-    },
-
-
-
-  ]);
+ ]);
 
   const [activeChat, setActiveChat] = useState({});
   return (
