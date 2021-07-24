@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import ChatWindow from './Components/ChatWindow';
 import ChatListItem from './Components/ChatListItem';
@@ -15,7 +15,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 export default () => {
   const [chatlist, setChatList] = useState([
-
+ 
     {
       chatId: 1,
       title: 'Fulano de Tal',
@@ -33,7 +33,7 @@ export default () => {
     },
     {
       chatId: 4,
-      title: 'Jaspion',
+      title: 'Majin Boo',
       image: 'https://p.kindpng.com/picc/s/78-785827_user-profile-avatar-login-account-male-user-icon.png", alt="foto-usuário'
     },
 
@@ -49,7 +49,7 @@ export default () => {
 
         <header>
           <img className="header-avatar" src="https://p.kindpng.com/picc/s/78-785827_user-profile-avatar-login-account-male-user-icon.png" alt="foto-usuário" />
-
+          
           <div className="header-buttons">
 
             <div className="header-btn">
@@ -80,6 +80,7 @@ export default () => {
           {chatlist.map((item, key) => (
             <ChatListItem
               key={key}
+              data={item}
               active={activeChat.chatId === chatlist[key].chatId}
 
               onClick={() => setActiveChat(chatlist[key])}
