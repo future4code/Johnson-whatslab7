@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import EmojiPicker from 'emoji-picker-react'
 import './ChatWindow.css'
 import MessageItem from './Components/MessageItem';
@@ -12,19 +12,35 @@ import SendIcon from '@material-ui/icons/Send';
 import MicIcon from '@material-ui/icons/Mic';
 
 
-export default () => {
+export default ({user}) => {
 
-    const [list, setList] = useState([])
+        const body = useRef();
 
-    const [text, setText] = useState('')
-    
+
+
+
+    const [emojiOpen, setEmojiOpen] = useState(false)
+    const [text, setText] = useState('');
+    const [listening, setListening] = useState(false);
+    const [list, setList] = useState([
+        {author: 123, body:'Bla bla bla bla bla bla'},
+        {author: 123, body:'Bla bla bla '},
+        {author: 1234, body:'Bla bla bla bla '},
+    ]);
+
+    useEffect(() => {
+            if(body.currrent.scrolHeight > body.currrent.scrolHeight) {
+                body.currrent.scrolTop = body.currrent.scrolHeight - body.currrent.offsetHeight
+
+            }
+    }, [list]);
 
 
     const handleEmojiClick = (e, emojiObject) => {
         setText(text + emojiObject.emoji)
     }
     
-    const [emojiOpen, setEmojiOpen] = useState(false)
+    
 
 
     const handleOpenEmoji = () => {
@@ -41,7 +57,6 @@ export default () => {
     if(SpeechRecognition !== undefined) {
         recognition = new SpeechRecognition()
     }
-    const [listening, setListening] = useState(false)
 
     const handleMicClick = () => {
         if(recognition !== null) {
@@ -90,11 +105,13 @@ export default () => {
             </div>
 
 
-            <div className="chatWindow-body">
+            <div ref={body} className="chatWindow-body">
                 {list.map((item, key) =>(
                     <MessageItem
                     key={key}
                     data={item}
+                    user={user}
+
                     />
 
                 ))}

@@ -40,13 +40,19 @@ export default () => {
     ]);
 
   const [activeChat, setActiveChat] = useState({});
+  const [user, setUser] = useState({
+      id: 1234,
+      avatar: 'https://i1.sndcdn.com/artworks-000577149764-s77dqq-t500x500.jpg',
+      name: 'Majin Boo'
+  });
+
   return (
     <div className="app-window">
 
       <div className="sidebar">
 
         <header>
-          <img className="header-avatar" src="https://p.kindpng.com/picc/s/78-785827_user-profile-avatar-login-account-male-user-icon.png" alt="foto-usuário" />
+          <img className="header-avatar" src={user.avatar} alt="foto-usuário" />
           
           <div className="header-buttons">
 
@@ -93,7 +99,9 @@ export default () => {
       </div>
       <div className="contentarea">
         {activeChat.chatId !== undefined &&
-          <ChatWindow />
+          <ChatWindow
+              user={user}
+          />
         }
         {activeChat.chatId === undefined &&
           <ChatIntro />
