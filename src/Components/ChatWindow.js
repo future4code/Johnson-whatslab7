@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import EmojiPicker from 'emoji-picker-react'
 import './ChatWindow.css'
-import MessageItem from './Components/MessageItem';
+import MessageItem from './MessageItem';
 
 import SearchIcon from '@material-ui/icons/Search'
 import AttachFileIcon from '@material-ui/icons/AttachFile'
