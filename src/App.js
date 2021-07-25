@@ -3,6 +3,8 @@ import './App.css';
 import ChatWindow from './Components/ChatWindow';
 import ChatListItem from './Components/ChatListItem';
 import ChatIntro from './Components/ChatIntro';
+import NewChat from './Components/NewChat';
+
 
 
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
@@ -14,12 +16,13 @@ import SearchIcon from '@material-ui/icons/Search';
 
 
 
+
 export default () => {
   const [chatlist, setChatList] = useState([
  
     {
       chatId: 1,
-      title: 'Meste Kame',
+      title: 'Mestre Kame',
       image: 'https://cdn.colab55.com/images/5501/studio/53170/art/101282/stickers.png', alt: "foto-mestre-Kame"
     },
     {
@@ -45,14 +48,25 @@ export default () => {
       avatar: 'https://i1.sndcdn.com/artworks-000577149764-s77dqq-t500x500.jpg',
       name: 'Majin Boo'
   });
+  const [showNewChat, setShowNewChat] = useState(false);
+
+  const handleNewChat = () => {
+    setShowNewChat(true);
+  }
 
   return (
     <div className="app-window">
 
       <div className="sidebar">
-
+        <NewChat 
+            chatlist={chatlist}
+            user={user}
+            show={showNewChat}
+            setShow={setShowNewChat}
+        />
         <header>
           <img className="header-avatar" src={user.avatar} alt="foto-usuário" />
+          <p>{user.name}</p>
           
           <div className="header-buttons">
 
@@ -60,7 +74,7 @@ export default () => {
               <DonutLargeIcon style={{ color: "#919191" }} />
 
             </div>
-            <div className="header-btn">
+            <div onClick={handleNewChat} className="header-btn">
               <ChatIcon style={{ color: "#919191" }} />
 
             </div>
@@ -95,6 +109,7 @@ export default () => {
 
 
         </div>
+        
 
       </div>
       <div className="contentarea">
@@ -108,6 +123,8 @@ export default () => {
         }
 
       </div>
+
+      
     </div>
 
   );

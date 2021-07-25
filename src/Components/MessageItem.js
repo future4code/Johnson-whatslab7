@@ -9,7 +9,7 @@ export default ({data, user}) => {
         
             className="messageLine"
             style={{
-                justifyContent: user.id === data.author ? 'flex-end' : 'flex-start   '
+                justifyContent: user.id === data.author ? 'flex-end' : 'flex-start'
             }}
         
         >
