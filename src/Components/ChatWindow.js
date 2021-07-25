@@ -4,6 +4,7 @@ import './ChatWindow.css'
 import MessageItem from './MessageItem';
 import ChatListItem from './ChatListItem';
 
+
 import SearchIcon from '@material-ui/icons/Search'
 import AttachFileIcon from '@material-ui/icons/AttachFile'
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -24,10 +25,36 @@ export default ({user}) => {
     const [text, setText] = useState('');
     const [listening, setListening] = useState(false);
     const [list, setList] = useState([
-        {author: 123, body:''},
-        {author: 123, body:''},
-        {author: 1234, body:''},
+        {author: 123, body:'Olá tudo bem?'},
+        {author: 123, body:'qual a boa?'},
+        {author: 1234, body:'Cara tá dificil aqui... rsrs'},
     ]);
+
+    const [chatlist, setChatList] = useState([
+ 
+        {
+          chatId: 1,
+          title: 'Mestre Kame',
+          image: 'https://cdn.colab55.com/images/5501/studio/53170/art/101282/stickers.png', alt: "foto-mestre-Kame"
+        },
+        {
+          chatId: 2,
+          title: 'Gohan',
+          image: 'http://pm1.narvii.com/6274/0d98e8638503d663162d2d6a5952a5e83dd8cce9_00.jpg', alt: "foto-Gohan"
+        },
+        {
+          chatId: 3,
+          title: 'Picolo',
+          image: 'http://pm1.narvii.com/6490/9410e324f560c606cf2919178a8d0183e17f3bd1_00.jpg', alt: "foto-Picolo"
+        },
+        {
+          chatId: 4,
+          title: 'Goku',
+          image: 'https://pbs.twimg.com/profile_images/3122936626/bf92ef8c8ca73f3e75a78084fe6de0f9.jpeg', alt: "foto-Goku"
+        },
+        ]);
+
+
 
     useEffect(() => {
             if(body.current.scrollHeight > body.current.offsetHeight) {
@@ -79,7 +106,7 @@ export default ({user}) => {
 
     const handleInputKeyUp = () => {
         // if(e.KeyCode ==13) {
-        //     handleSendClick();
+        //     handleSendClick(); 
         // }
     }
     const handleSendClick =() => {
@@ -89,10 +116,15 @@ export default ({user}) => {
     return (
         <div className="chatWindow">
             <div className="chatWindow-header">
+                
                 <div className="chatWindow-headerInfo">
-                    <img className="chatWindow-avatar" src={"https://image.flaticon.com/icons/png/512/21/21104.png"} alt="foto-usuário" />
-                    <div className="chatWindow-name">Johnson Lab</div> 
-                </div>
+                {chatlist.map((item, key) => (
+                    <div className="newChat-item" key={key}>
+                        <img className="chatWindow-avatar" src={item.image} alt="" />
+                        <div className="chatWindow-name">{item.name}</div>
+                    </div>
+                ))}
+            </div>
 
 
                 <div className="chatWindow-headerButtons">
