@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import EmojiPicker from 'emoji-picker-react'
 import './ChatWindow.css'
-import MessageItem from './Components/MessageItem';
+import MessageItem from './MessageItem';
+import ChatListItem from './ChatListItem';
 
 import SearchIcon from '@material-ui/icons/Search'
 import AttachFileIcon from '@material-ui/icons/AttachFile'
@@ -23,14 +24,14 @@ export default ({user}) => {
     const [text, setText] = useState('');
     const [listening, setListening] = useState(false);
     const [list, setList] = useState([
-        {author: 123, body:'Bla bla bla bla bla bla'},
-        {author: 123, body:'Bla bla bla '},
-        {author: 1234, body:'Bla bla bla bla '},
+        {author: 123, body:''},
+        {author: 123, body:''},
+        {author: 1234, body:''},
     ]);
 
     useEffect(() => {
-            if(body.currrent.scrolHeight > body.currrent.scrolHeight) {
-                body.currrent.scrolTop = body.currrent.scrolHeight - body.currrent.offsetHeight
+            if(body.current.scrollHeight > body.current.offsetHeight) {
+                body.current.scrollTop = body.current.scrollHeight - body.current.offsetHeight
 
             }
     }, [list]);
@@ -75,15 +76,22 @@ export default ({user}) => {
         }
 
     }
+
+    const handleInputKeyUp = () => {
+        // if(e.KeyCode ==13) {
+        //     handleSendClick();
+        // }
+    }
     const handleSendClick =() => {
+        
         
     }
     return (
         <div className="chatWindow">
             <div className="chatWindow-header">
                 <div className="chatWindow-headerInfo">
-                    <img className="chatWindow-avatar" src="https://image.flaticon.com/icons/png/512/21/21104.png" alt="foto-usuário" />
-                    <div className="chatWindow-name">Johnson Lab</div>
+                    <img className="chatWindow-avatar" src={"https://image.flaticon.com/icons/png/512/21/21104.png"} alt="foto-usuário" />
+                    <div className="chatWindow-name">Johnson Lab</div> 
                 </div>
 
 
@@ -149,6 +157,7 @@ export default ({user}) => {
                         placeholder="Digite a LabMenssenger!"
                         value={text}
                         onChange={e => setText(e.target.value)}
+                        onKeyUp={handleInputKeyUp}
                     />
                 </div>
                 <div className="chatWindow-pos">

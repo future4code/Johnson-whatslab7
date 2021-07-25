@@ -90,3 +90,9 @@ header{
     flex: 1;
 
 }
+p{
+    flex: 1;
+    margin-left: 12px;
+    font-weight: 500;
+}
+
