@@ -3,12 +3,14 @@ import './App.css';
 import ChatWindow from './Components/ChatWindow';
 import ChatListItem from './Components/ChatListItem';
 import ChatIntro from './Components/ChatIntro';
+import NewChat from './Components/NewChat';
 
 
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
+
 
 
 
@@ -45,12 +47,22 @@ export default () => {
       avatar: 'https://i1.sndcdn.com/artworks-000577149764-s77dqq-t500x500.jpg',
       name: 'Majin Boo'
   });
+  const [showNewChat, setShowNewChat] = useState(false);
+
+  const handleNewChat = () => {
+    setShowNewChat(true);
+  }
 
   return (
     <div className="app-window">
 
       <div className="sidebar">
-
+        <NewChat 
+            chatlist={chatlist}
+            user={user}
+            show={showNewChat}
+            setShow={setShowNewChat}
+        />
         <header>
           <img className="header-avatar" src={user.avatar} alt="foto-usuário" />
           
@@ -60,7 +72,7 @@ export default () => {
               <DonutLargeIcon style={{ color: "#919191" }} />
 
             </div>
-            <div className="header-btn">
+            <div onClick={handleNewChat} className="header-btn">
               <ChatIcon style={{ color: "#919191" }} />
 
             </div>
