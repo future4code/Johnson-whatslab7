@@ -18,7 +18,7 @@ export default ({onClick, active, data}) => {
                 </div>
                 <div className="chatListItem-line">
                     <div className="chatListItem-lastMsg">
-                        <p>Opa.! Tudo bem? E ai qual é a boa? o que ki ta pegando? Qual é o pé do frango? rrsrsrs</p>
+                        <p>Vamos destruir o mundo amiguinho?</p>
                     </div>
                 </div>
 

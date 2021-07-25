@@ -6,6 +6,7 @@ import ChatIntro from './Components/ChatIntro';
 import NewChat from './Components/NewChat';
 
 
+
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -21,7 +22,7 @@ export default () => {
  
     {
       chatId: 1,
-      title: 'Meste Kame',
+      title: 'Mestre Kame',
       image: 'https://cdn.colab55.com/images/5501/studio/53170/art/101282/stickers.png', alt: "foto-mestre-Kame"
     },
     {
@@ -65,6 +66,7 @@ export default () => {
         />
         <header>
           <img className="header-avatar" src={user.avatar} alt="foto-usuário" />
+          <p>{user.name}</p>
           
           <div className="header-buttons">
 
@@ -107,6 +109,7 @@ export default () => {
 
 
         </div>
+        
 
       </div>
       <div className="contentarea">
@@ -120,6 +123,8 @@ export default () => {
         }
 
       </div>
+
+      
     </div>
 
   );

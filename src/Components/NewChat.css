@@ -14,7 +14,7 @@
 
 .newChat-head {
     display: flex;
-    background-color: #00bfa5;
+    background-color: #bf7c00bb;
     align-items: center;
     padding: 60px 15px 15px 15px;
 }
@@ -30,7 +30,7 @@
 }
 
 .newChat-headtitle {
-    font-size: 19;
+    font-size: 19px;
     height: 40px;
     line-height: 40px;
     flex: 1;
@@ -63,7 +63,7 @@
 }
 
 .newChat-item:hover {
-    background-color: #F5F5F5;
+    background-color: #e0a853;
 }
 
 .newChat-itemavatar {
