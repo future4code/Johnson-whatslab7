@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import EmojiPicker from 'emoji-picker-react'
 import './ChatWindow.css'
 import MessageItem from './MessageItem';
+
 import ChatListItem from './ChatListItem';
+
 
 
 import SearchIcon from '@material-ui/icons/Search'
