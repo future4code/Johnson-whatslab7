@@ -108,10 +108,11 @@ export default ({user}) => {
 
     const handleInputKeyUp = () => {
         // if(e.KeyCode ==13) {
-        //     handleSendClick(); 
+        //     handleSendClick();  
         // }
     }
     const handleSendClick =() => {
+      //  if(text !== '') - Faltou essa lógica =/
         
         
     }
